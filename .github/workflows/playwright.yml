@@ -32,9 +32,12 @@ jobs:
 
       - name: Setup Environment
         run: |
-          echo "USER_PORTAL_URL=${{ secrets.USER_PORTAL_URL }}" >> .env
-          echo "USER_PORTAL_USERNAME=${{ secrets.USER_PORTAL_USERNAME }}" >> .env
-          echo "USER_PORTAL_PASSWORD=${{ secrets.USER_PORTAL_PASSWORD }}" >> .env
+          cat <<EOF > .env
+          USER_PORTAL_URL=https://www.saucedemo.com
+          USER_PORTAL_USERNAME=standard_user
+          USER_PORTAL_PASSWORD=secret_sauce
+          TAKE_SCREENSHOTS=false
+          EOF
 
       - name: Run Playwright Tests
         env:
