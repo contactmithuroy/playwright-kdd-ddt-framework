@@ -1,6 +1,6 @@
 import { testFromHooks, expect } from "../hooks/hooks";
 import { CSVDataController, TestCase } from "../../utils/CSVDataController";
-import { TestCases } from "../../tests/registery/TestCases";
+import { TestCases } from "../../tests/registry/testCases";
 import { pageObjects } from "../base/base";
 
 const keywordController = new CSVDataController();
