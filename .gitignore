@@ -1,6 +1,6 @@
 
 # Playwright test configuration and related files to ignore
-.env
+
 AllTestResults/
 node_modules/
 /test-results/
