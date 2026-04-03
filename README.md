@@ -42,7 +42,7 @@ This framework is designed for **Enterprise-Level Test Automation**, supporting 
 ### 1. Clone the repository
 
 ```
-git clone <repo-url>
+git clone <https://github.com/contactmithuroy/playwright-kdd-ddt-framework.git>
 cd <project-folder>
 ```
 
