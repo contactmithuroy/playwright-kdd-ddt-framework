@@ -1,10 +1,20 @@
 name: Playwright Tests CI
 
 on:
+
+# Auto trigger on push
+
 push:
 branches: [ main, develop ]
+
+# Auto trigger on PR
+
 pull_request:
 branches: [ main ]
+
+# 🔹 Manual trigger from GitHub UI
+
+workflow_dispatch:
 
 jobs:
 test:
@@ -31,7 +41,7 @@ steps:
   - name: Install Playwright Browsers
     run: npx playwright install --with-deps
 
-  # Step 5: Create .env file (important 🔥)
+  # Step 5: Create .env file from secrets
   - name: Create Environment File
     run: |
       echo "USER_PORTAL_URL=${{ secrets.USER_PORTAL_URL }}" >> .env
@@ -44,7 +54,7 @@ steps:
     run: npx playwright test
 
   # Step 7: Upload Playwright report
-  - name: Upload Test Report
+  - name: Upload Playwright Report
     if: always()
     uses: actions/upload-artifact@v4
     with:
@@ -52,7 +62,7 @@ steps:
       path: playwright-report/
       retention-days: 7
 
-  # Step 8: Upload custom results (optional)
+  # Step 8: Upload custom results
   - name: Upload Custom Results
     if: always()
     uses: actions/upload-artifact@v4
