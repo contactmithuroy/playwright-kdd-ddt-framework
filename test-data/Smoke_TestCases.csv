@@ -1,0 +1,2 @@
+TestCaseID,TCToExecute,Description,Execute,RequiresLogin,DataFile,DataRowIndex,TestPlanID,SuiteID,Status,ParentSuteID,Note
+TESC_001,Verify_user_can_add_product_to_cart,User can add product to cart,Y,,AddToCartTestData.csv,,1011,0211,Passed,,
