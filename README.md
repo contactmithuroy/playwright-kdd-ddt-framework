@@ -261,11 +261,53 @@ npx playwright show-report
 
 ---
 
+## 🔄 CI/CD (GitHub Actions)
+
+This framework is integrated with **GitHub Actions** to enable automated test execution on every code change, ensuring continuous quality and faster feedback.
+
+---
+### 🚀 Pipeline Features
+
+* Automatically runs tests on every **push** and **pull request**
+* Supports **manual execution** via GitHub UI
+* Runs tests in **headless mode** for CI environments
+* Uses environment configuration via `.env`
+* Uploads test reports as artifacts
+* Fully compatible with **Playwright + TypeScript**
+
+---
+
+### ⚙️ Workflow Triggers
+
+```text
+Push → Run Tests Automatically
+Pull Request → Validate Changes
+Manual Trigger → Run Anytime from GitHub UI
+```
+
+---
+
+---
+
+### ▶️ How to Run CI Manually
+
+1. Go to **GitHub → Actions**
+2. Select the workflow
+3. Click **"Run workflow"**
+4. Choose test type (e.g., smoke)
+5. Run tests
+
+---
+
+### Test Reports
+
+After execution, reports are available in:
+* `AllTestResults/` (custom reports)
+
 ## 🚀 Future Enhancements
 
 * API testing integration
 * Parallel execution optimization
-* CI/CD (GitHub Actions / Jenkins)
 * Allure reporting
 * Cross-browser execution
 
