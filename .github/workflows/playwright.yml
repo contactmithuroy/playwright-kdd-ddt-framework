@@ -66,15 +66,17 @@ steps:
       echo "TAKE_SCREENSHOTS=false" >> .env
 
   # Step 6: Run tests (auto + manual support)
-  - name: Run Tests
-    run: |
-      if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-        echo "Running manual tests..."
-        npx playwright test tests/${{ github.event.inputs.test_type }}
-      else
-        echo "Running default tests..."
-        npx playwright test
-      fi
+- name: Run Playwright Tests
+  env:
+    TEST_TYPE: ${{ github.event.inputs.test_type }}
+  run: |
+    if [ -n "$TEST_TYPE" ]; then
+      echo "Running manual test: $TEST_TYPE"
+      npx playwright test tests/$TEST_TYPE
+    else
+      echo "Running default tests"
+      npx playwright test
+    fi
 
   # Step 7: Upload Playwright report
   - name: Upload Playwright Report
